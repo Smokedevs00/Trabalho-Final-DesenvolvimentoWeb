@@ -1,0 +1,59 @@
+<!-- <table mat-table>
+    <thead>
+
+        <th>ID</th>
+        <th>Professor</th>
+        <th>Aluno</th>
+        <th>Laboratório</th>
+        <th>Data-Horario</th>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let bt of hst">
+            <th>{{bt.id}}</th>
+            <th>{{bt.usuario_professor.nome}}</th>
+            <th>{{bt.aluno_nome}}</th>
+            <th>{{bt.sala.nome}}</th>
+            <th>{{bt.data_hora}}</th>
+        </tr>
+
+    </tbody>
+</table>
+   -->
+   <table mat-table [dataSource]="hst" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Coluna do id -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Coluna do professor -->
+    <ng-container matColumnDef="professor">
+      <th mat-header-cell *matHeaderCellDef> Professor </th>
+      <td mat-cell *matCellDef="let element"> {{element.usuario_professor.nome}} </td>
+    </ng-container>
+  
+    <!-- Coluna do aluno  -->
+   <ng-container matColumnDef="aluno">
+      <th mat-header-cell *matHeaderCellDef> Aluno </th>
+      <td mat-cell *matCellDef="let element"> {{element.aluno_nome}} </td>
+    </ng-container>
+  
+    <!-- Coluna da sala -->
+    <ng-container matColumnDef="sala">
+      <th mat-header-cell *matHeaderCellDef> sala </th>
+      <td mat-cell *matCellDef="let element"> {{element.sala.nome}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <ng-container matColumnDef="data">
+        <th mat-header-cell *matHeaderCellDef> data </th>
+        <td mat-cell *matCellDef="let element"> {{element.data_hora}} </td>
+      </ng-container>
+  </table>

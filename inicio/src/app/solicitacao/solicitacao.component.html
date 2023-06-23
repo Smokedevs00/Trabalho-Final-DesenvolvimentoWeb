@@ -1,0 +1,74 @@
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+  <mat-toolbar class="collor">
+   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon style="color: aliceblue;">menu</mat-icon>
+  </button>
+  <span style="color: aliceblue;">Laboratorio</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon style="color: aliceblue;">favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+   <mat-icon style="color: aliceblue;">share</mat-icon>
+ </button>
+</mat-toolbar>
+<br>
+
+<div class="ctd-form" >
+  <form (ngSubmit) = "submitForm()">  
+    <h1>Solicitação do Laboratório</h1>
+    <br><br><br>
+
+    <form class="example-form">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Professor</mat-label>
+        <br><br>
+        <input matInput #message maxlength="256" type="text" name="prof" id="prof"  [(ngModel)] = "prof" required placeholder="Ex:Nome do Professor">
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+       </mat-form-field>
+    </form>
+  <br>
+     <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Aluno</mat-label>
+        <br><br>
+        <input matInput #message maxlength="256" type="text" name="aluno" id="aluno" [(ngModel)] = "aluno" required  placeholder="Ex:Nome do aluno">
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+      </mat-form-field>
+    </form> 
+    <br>
+    <label for="dt">Data-Hórario</label>
+    <input type="datetime-local" name="dt" id="dt" [(ngModel)] = "dt" required> 
+    <br> 
+    <br>
+    <br>
+    <mat-form-field>
+    <mat-label>Laboratorios</mat-label>
+    <br><br>
+    <select matNativeControl name="lab" id="lab" [(ngModel)] = "lab" required >
+      <option value="01" id="lab">Laboratorio 01</option>
+      <option value="02" id="lab">Laboratorio 02</option>
+    </select>
+  </mat-form-field>
+  <br>
+  <section>
+    <div class="example-button-row" style="color: aliceblue;" >
+      <button style="background-color: rgb(0, 149, 255);" id="submit" mat-raised-button>Reserva</button>
+    </div>
+  </section>
+  <br>
+  <section>
+    <div class="example-button-row"  style="color: aliceblue;" >
+      <button style="background-color: rgb(0, 149, 255);"mat-raised-button routerLink="/reserva">Historico</button>
+    </div>
+  </section>
+
+ 
+  
+
+ 
